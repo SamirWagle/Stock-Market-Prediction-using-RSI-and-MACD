@@ -102,30 +102,20 @@ def plot_technical_indicators(dataset, last_days):
     plt.title('Technical indicators for Goldman Sachs - last {} days.'.format(last_days))
     plt.ylabel('NPR')
     plt.legend()
-
     # Plot second subplot
-
     plt.subplot(2, 1, 2)
     plt.title('MACD')
     plt.plot(dataset['MACD'],label='MACD', linestyle='-.')
 #     plt.hlines(15, xmacd_, shape_0, colors='g', linestyles='--')
 #     plt.hlines(-15, xmacd_, shape_0, colors='g', linestyles='--')
     plt.plot(dataset['log_momentum'],label='Momentum', color='b',linestyle='-')
-
     plt.legend()
     plt.show()
-
-
 plot_technical_indicators(df, 100)
-
-
 df
-
 plt.figure(figsize = (28,12))
 sns.set_context('poster',font_scale=1)
 sns.heatmap(df.corr(), annot = True).set_title('Params')
-
-
 
 print('Total dataset has {} samples, and {} features.'.format(df.shape[0], \
                                                               df.shape[1]))
